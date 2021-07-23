@@ -1,6 +1,9 @@
 fx_version 'cerulean'
 games { 'gta5' }
 
+client_script 'config.lua'
+server_script 'config.lua'
+
 ui_page 'notifs/index.html'
 
 files {
@@ -15,12 +18,10 @@ client_scripts {
 	'map.lua',
 	'client.lua',
 	'GUI.lua',
-	'models_c.lua',
-	'config.lua'
+	'models_c.lua'
 }
 
 server_scripts {
     '@vrp/lib/utils.lua',
-    'server.lua',
-	'config.lua'
+    'server.lua'
 }
