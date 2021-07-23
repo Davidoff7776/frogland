@@ -28,8 +28,8 @@ cfg.controls = {
     open = {3,311}, -- K to open the menu
   },
   request = {
-    yes = {1,96}, -- Numbpad+
-    no = {1,97} -- Numbpad-
+    yes = {1,10}, -- PageUp
+    no = {1,11} -- PageDown
   }
 }
 

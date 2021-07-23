@@ -13,7 +13,7 @@ function RequestManager()
 
 RequestManager.prototype.buildText = function(text,time)
 {
-  return "<span>"+text+" <span class=\"yes\">[NumPad+]</span><span class=\"no\">[NumPad-]</span>["+time+"s]</span>";
+  return "<span>"+text+" <span class=\"yes\">[Page Up]</span><span class=\"no\">[Page Down]</span>["+time+"s]</span>";
 }
 
 RequestManager.prototype.addRequest = function(id,text,time)
