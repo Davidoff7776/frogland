@@ -40,7 +40,7 @@ end
 
 -- SHOWROOM
 RegisterServerEvent('veh_SR:CheckMoneyForVeh')
-AddEventHandler('veh_SR:CheckMoneyForVeh', function(category, vehicle, price, veh_type, isXZ, isDM)
+AddEventHandler('veh_SR:CheckMoneyForVeh', function(category, vehicle, price, isXZ, isDM)
   local user_id = tonumber(vRP.getUserId({source}))
 	local player = vRP.getUserSource({user_id})
 	
@@ -59,7 +59,7 @@ AddEventHandler('veh_SR:CheckMoneyForVeh', function(category, vehicle, price, ve
 			end	
 			if vRP.tryFullPayment({user_id,actual_price}) then
 				vRP.getUserIdentity({user_id, function(identity)
-                    MySQL.query("vRP/add_custom_vehicle", {user_id = user_id, vehicle = vehicle, vehicle_plate = "P "..identity.registration})
+                    MySQL.execute("vRP/add_custom_vehicle", {user_id = user_id, vehicle = vehicle, vehicle_plate = "P "..identity.registration})
                 end})
 				TriggerClientEvent('veh_SR:CloseMenu', player)
 				vRPclient.notify(player,{"You paid ~r~$"..actual_price})
@@ -81,7 +81,7 @@ AddEventHandler('veh_SR:CheckMoneyForBasicVeh', function(user_id, vehicle, price
   else
         vRPclient.notify(player,{"Paid ~r~"..price.."$."})
     vRP.getUserIdentity({user_id, function(identity)
-          MySQL.query("vRP/add_custom_vehicle", {user_id = user_id, vehicle = vehicle, vehicle_plate = "P "..identity.registration})
+          MySQL.execute("vRP/add_custom_vehicle", {user_id = user_id, vehicle = vehicle, vehicle_plate = "P "..identity.registration})
     end})
     Gclient.spawnBoughtVehicle(player,{veh_type, vehicle})
   end
