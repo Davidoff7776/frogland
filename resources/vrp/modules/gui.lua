@@ -1,5 +1,4 @@
 local Tools = module("lib/Tools")
-
 local cfg = module("cfg/gui")
 
 -- MENU
@@ -45,7 +44,7 @@ end
 
 -- force close player menu
 function vRP.closeMenu(source)
-  vRPclient.closeMenu(source,{})
+  vRPclient.closeMenu(source, {})
 end
 
 -- PROMPT

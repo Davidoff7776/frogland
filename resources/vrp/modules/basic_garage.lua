@@ -38,6 +38,27 @@ Citizen.CreateThread(function()
     end
 end)
 
+
+RegisterNetEvent('vRP:CheckPermission')
+AddEventHandler('vRP:CheckPermission', function(garage)
+    local source = source
+    local user_id = vRP.getUserId(source)
+    for i, v in pairs(vehicle_groups) do
+        local config = vehicle_groups[i]._config
+        local perm = config.permissions or nil
+        if perm then
+            for x, y in pairs(perm) do
+                if vRP.hasPermission(user_id, y) then
+                    if garage == y then
+                        TriggerClientEvent('vRP:ReturnPermission', source, true)
+                    end
+                end
+            end
+        end
+    end
+end)
+
+
 RegisterNetEvent('vRP:FetchCars')
 AddEventHandler('vRP:FetchCars', function(owned, type)
     local source = source

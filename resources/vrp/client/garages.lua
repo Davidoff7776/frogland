@@ -9,7 +9,8 @@ local RentedVeh = false;
 local SelectedCar = {spawncode = nil, name = nil}
 local veh = nil 
 local cantload = {}
-local vehname = nil 
+local vehname = nil
+local has_permission = false
 --Created by JamesUK#6793 :)
 RMenu.Add('vRPGarages', 'main', RageUI.CreateMenu("Garages", "~b~Garage Menu",1250,100))
 RMenu.Add('vRPGarages', 'owned_vehicles',  RageUI.CreateSubMenu(RMenu:Get("vRPGarages", "main")))
@@ -344,6 +345,11 @@ Citizen.CreateThread(function()
     end
 end)
 
+RegisterNetEvent('vRP:ReturnPermission')
+AddEventHandler('vRP:ReturnPermission', function(bool)
+    has_permission = bool;
+end)
+
 local MenuOpen = false; 
 local inMarker = false;
 Citizen.CreateThread(function()
@@ -353,10 +359,19 @@ Citizen.CreateThread(function()
         inMarker = false;
         for i,v in pairs(cfg.garages) do 
             local x,y,z = v[2], v[3], v[4]
-            if #(PlayerCoords - vec3(x,y,z)) <= 3.0 then 
-                inMarker = true 
-                garage_type = v[1]
-                break
+            if #(PlayerCoords - vec3(x,y,z)) <= 3.0 then
+                if v[5] == nil then
+                    inMarker = true 
+                    garage_type = v[1]
+                    break
+                else 
+                    TriggerServerEvent('vRP:CheckPermission', v[5])
+                    if has_permission then
+                        inMarker = true 
+                        garage_type = v[1]
+                        break
+                    end
+                end
             end
         end
         if not MenuOpen and inMarker then

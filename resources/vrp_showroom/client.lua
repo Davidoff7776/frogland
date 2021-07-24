@@ -15,10 +15,10 @@ RegisterNetEvent( 'wk:deleteVehicle2' )
 AddEventHandler( 'wk:deleteVehicle2', function()
     local ped = GetPlayerPed( -1 )
 
-    if ( DoesEntityExist( ped ) and not IsEntityDead( ped ) ) then 
+    if ( DoesEntityExist( ped ) and not IsEntityDead( ped ) ) then
         local pos = GetEntityCoords( ped )
 
-        if ( IsPedSittingInAnyVehicle( ped ) ) then 
+        if ( IsPedSittingInAnyVehicle( ped ) ) then
             local vehicle = GetVehiclePedIsIn( ped, false )
 
             if ( GetPedInVehicleSeat( vehicle, -1 ) == ped ) then 
@@ -195,7 +195,7 @@ function vehSR_ShowVehshopBlips(bool)
 			pos = pos.entering
 			local blip = AddBlipForCoord(pos[1],pos[2],pos[3])
 			-- 60 58 137
-			SetBlipSprite(blip,326)
+			SetBlipSprite(blip,89)
 			BeginTextCommandSetBlipName("STRING")
 			AddTextComponentString("Showroom")
 			EndTextCommandSetBlipName(blip)
