@@ -2,26 +2,24 @@ window.addEventListener("load", function() {
     errdiv = document.createElement("div");
 
     //init dynamic menu
-    var ogrpMenu = new Menu();
+    //var dynamic_menu = new Menu();
     var wprompt = new WPrompt();
     var requestmgr = new RequestManager();
     var announcemgr = new AnnounceManager();
 
-    wprompt.onClose = function() {
-        $.post("https://vrp/prompt", JSON.stringify({ act: "close", result: wprompt.result.substring(0, 1000) }));
-    };
-
     requestmgr.onResponse = function(id, ok) {
         $.post("https://vrp/request", JSON.stringify({ act: "response", id: id, ok: ok }));
-    };
+    }
+    wprompt.onClose = function() {
+            $.post("https://vrp/prompt", JSON.stringify({ act: "close", result: wprompt.result.substring(0, 1000) }));
+        }
+        /*dynamic_menu.onClose = function () {
+        	$.post("https://vrp/menu", JSON.stringify({act: "close", id: dynamic_menu.id}));
+        }
+        dynamic_menu.onValid = function (choice, mod) {
+        	$.post("https://vrp/menu", JSON.stringify({act: "valid", id: dynamic_menu.id, choice: choice, mod: mod}));
+        }*/
 
-    ogrpMenu.onClose = function() {
-        $.post("https://vrp/menu", JSON.stringify({ act: "close", id: ogrpMenu.id }));
-    };
-
-    ogrpMenu.onValid = function(choice, mod) {
-        $.post("https://vrp/menu", JSON.stringify({ act: "valid", id: ogrpMenu.id, choice: choice, mod: mod }));
-    };
 
     //request config
     $.post("https://vrp/cfg", "");
@@ -45,8 +43,18 @@ window.addEventListener("load", function() {
         if (data.act == "cfg") {
             cfg = data.cfg
         } else if (data.act == "open_menu") { //OPEN DYNAMIC MENU
-            ogrpMenu.open(data);
-            ogrpMenu.id = data.menudata.id;
+            /*current_menu.close();
+            dynamic_menu.open(data.menudata.name, data.menudata.choices);
+            dynamic_menu.id = data.menudata.id;
+
+            //customize menu
+            var css = data.menudata.css
+            if (css.top)
+            //dynamic_menu.div.style.top = css.top;
+            	if (css.header_color)
+            		dynamic_menu.div_header.style.backgroundColor = css.header_color;
+
+            current_menu = dynamic_menu;*/
         } else if (data.act == "close_menu") { //CLOSE MENU
             //current_menu.close();
         }
@@ -115,24 +123,26 @@ window.addEventListener("load", function() {
         // CONTROLS
         else if (data.act == "event") { //EVENTS
             if (data.event == "UP") {
-                if (ogrpMenu.opened) {
-                    ogrpMenu.moveUp();
-                }
+                /*if (!wprompt.opened)
+                	current_menu.moveUp();*/
             } else if (data.event == "DOWN") {
-                if (ogrpMenu.opened) {
-                    ogrpMenu.moveDown();
-                }
+                /*if (!wprompt.opened)
+                	current_menu.moveDown();*/
             } else if (data.event == "LEFT") {
-                ogrpMenu.valid(-1);
+                /*if (!wprompt.opened)
+                	current_menu.valid(-1);*/
             } else if (data.event == "RIGHT") {
-                ogrpMenu.valid(1);
+                /*if (!wprompt.opened)
+                	current_menu.valid(1);*/
             } else if (data.event == "SELECT") {
-                ogrpMenu.valid(0);
+                /*if (!wprompt.opened)
+                	current_menu.valid(0);*/
             } else if (data.event == "CANCEL") {
                 if (wprompt.opened)
                     wprompt.close();
-                else
-                    ogrpMenu.close(data);
+                /*else
+                	current_menu.close();*/
+
             } else if (data.event == "F5") {
                 requestmgr.respond(true);
             } else if (data.event == "F6") {
