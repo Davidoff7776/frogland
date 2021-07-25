@@ -16,15 +16,12 @@ z
 
 local Tunnel = module("vrp", "lib/Tunnel")
 local Proxy = module("vrp", "lib/Proxy")
+local cfg = module("vrp_showroom", "cfg/showroom")
 
 MySQL = module("vrp_mysql", "MySQL")
 
 vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP","vRP_showroom")
-Gclient = Tunnel.getInterface("vRP_garages","vRP_showroom")
-
-local cfg = module("vrp_showroom","cfg/showroom")
-local vehgarage = cfg
 
 MySQL.createCommand("vRP/add_custom_vehicle","INSERT IGNORE INTO vrp_user_vehicles(user_id,vehicle,vehicle_plate) VALUES(@user_id,@vehicle,@vehicle_plate)")
 MySQL.createCommand("vRP/get_vehicle","SELECT vehicle FROM vrp_user_vehicles WHERE user_id = @user_id AND vehicle = @vehicle")
@@ -69,21 +66,4 @@ AddEventHandler('veh_SR:CheckMoneyForVeh', function(category, vehicle, price, is
 			end
 		end
 	end)
-end)
-
-RegisterServerEvent('veh_SR:CheckMoneyForBasicVeh')
-AddEventHandler('veh_SR:CheckMoneyForBasicVeh', function(user_id, vehicle, price ,veh_type)
-  local player = vRP.getUserSource({user_id})
-  MySQL.query("vRP/get_vehicle", {user_id = user_id, vehicle = vehicle}, function(pvehicle, affected)
-  if #pvehicle > 0 then
-    vRPclient.notify(player,{"~r~Vehicle already owned."})
-    vRP.giveMoney({user_id,price})
-  else
-        vRPclient.notify(player,{"Paid ~r~"..price.."$."})
-    vRP.getUserIdentity({user_id, function(identity)
-          MySQL.execute("vRP/add_custom_vehicle", {user_id = user_id, vehicle = vehicle, vehicle_plate = "P "..identity.registration})
-    end})
-    Gclient.spawnBoughtVehicle(player,{veh_type, vehicle})
-  end
-  end)
 end)

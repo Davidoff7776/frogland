@@ -722,7 +722,6 @@ cfg.groups = {
     "Bounty.vehicle",
    -- "-police.store_weapons",
     "-police.seizable",	-- negative permission, police can't seize itself, even if another group add the permission
-	"Bounty.vehicle",
 	"Bounty.loadshop",
 	"police.menu_interaction",
 	"cop.whitelisted"
