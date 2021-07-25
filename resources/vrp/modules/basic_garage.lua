@@ -48,9 +48,14 @@ AddEventHandler('vRP:CheckPermission', function(garage)
         local perm = config.permissions or nil
         if perm then
             for x, y in pairs(perm) do
-                if vRP.hasPermission(user_id, y) then
-                    if garage == y then
-                        TriggerClientEvent('vRP:ReturnPermission', source, true)
+                if y ~= "player.phone" then
+                    if vRP.hasPermission(user_id, y) then
+                        if garage == y then
+                            TriggerClientEvent('vRP:ReturnPermission', source, true)
+                            return
+                        end
+                    else
+                        TriggerClientEvent('vRP:ReturnPermission', source, false)
                     end
                 end
             end
