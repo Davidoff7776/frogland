@@ -65,7 +65,7 @@ end)
 
 
 RegisterNetEvent('vRP:FetchCars')
-AddEventHandler('vRP:FetchCars', function(owned, type)
+AddEventHandler('vRP:FetchCars', function(owned, type, garage)
     local source = source
     local user_id = vRP.getUserId(source)
     local returned_table = {}
@@ -82,15 +82,15 @@ AddEventHandler('vRP:FetchCars', function(owned, type)
                                 noperms = true;
                             end
                         end
-                    end
-                    if not noperms then 
-                        returned_table[i] = {
-                            ["config"] = config
-                        }
-                        returned_table[i].vehicles = {}
-                        for a, z in pairs(v) do
-                            if a ~= "_config" then
-                                returned_table[i].vehicles[a] = {z[1], z[2]}
+                        if not noperms then 
+                            returned_table[i] = {
+                                ["config"] = config
+                            }
+                            returned_table[i].vehicles = {}
+                            for a, z in pairs(v) do
+                                if a ~= "_config" then
+                                    returned_table[i].vehicles[a] = {z[1], z[2]}
+                                end
                             end
                         end
                     end
@@ -109,7 +109,7 @@ AddEventHandler('vRP:FetchCars', function(owned, type)
                             local perm = config.permissions or nil
                             if perm then
                                 for i, v in pairs(perm) do
-                                    if not vRP.hasPermission(user_id, v) then
+                                    if garage ~= v then
                                         noperms = true;
                                     end
                                 end

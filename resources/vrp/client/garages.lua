@@ -11,6 +11,7 @@ local veh = nil
 local cantload = {}
 local vehname = nil
 local has_permission = false
+local garage = nil
 --Created by JamesUK#6793 :)
 RMenu.Add('vRPGarages', 'main', RageUI.CreateMenu("Garages", "~b~Garage Menu",1250,100))
 RMenu.Add('vRPGarages', 'owned_vehicles',  RageUI.CreateSubMenu(RMenu:Get("vRPGarages", "main")))
@@ -45,10 +46,10 @@ RageUI.CreateWhile(1.0, true, function()
         RageUI.DrawContent({ header = true, glare = true, instructionalButton = true}, function()
             DeleteCar(veh)
             if vRPConfig.EnableBuyVehicles then
-                RageUI.Button("Buy Vehicles", "", {}, true, function(Hovered, Active, Selected) 
+                RageUI.Button("Job Vehicles", "", {}, true, function(Hovered, Active, Selected) 
                     if Selected then 
                         if Table_Type == nil or Table_Type then 
-                            TriggerServerEvent('vRP:FetchCars', false, garage_type)
+                            TriggerServerEvent('vRP:FetchCars', false, garage_type, garage)
                             Table_Type = false;
                         end
                     end
@@ -58,7 +59,7 @@ RageUI.CreateWhile(1.0, true, function()
                 if Selected then 
                     if Table_Type == nil or not Table_Type then 
                         Table_Type = true;
-                        TriggerServerEvent('vRP:FetchCars', true, garage_type)
+                        TriggerServerEvent('vRP:FetchCars', true, garage_type, garage)
                     end
                 end
             end, RMenu:Get("vRPGarages", "owned_vehicles"))
@@ -359,13 +360,14 @@ Citizen.CreateThread(function()
         inMarker = false;
         for i,v in pairs(cfg.garages) do 
             local x,y,z = v[2], v[3], v[4]
+            garage = v[5]
             if #(PlayerCoords - vec3(x,y,z)) <= 3.0 then
-                if v[5] == nil then
+                if garage == nil then
                     inMarker = true 
                     garage_type = v[1]
                     break
                 else 
-                    TriggerServerEvent('vRP:CheckPermission', v[5])
+                    TriggerServerEvent('vRP:CheckPermission', garage)
                     if has_permission then
                         inMarker = true 
                         garage_type = v[1]
