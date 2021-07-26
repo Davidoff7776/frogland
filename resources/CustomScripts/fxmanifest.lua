@@ -5,7 +5,6 @@ games { 'gta5' }
 server_scripts{ 
   "@vrp/lib/utils.lua",
   "deletepoliceweapons-server.lua",
-  "commands-server.lua",
   "deathmessages-server.lua",
   "weathersync-server.lua",
   "dispatch-server.lua"
