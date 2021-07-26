@@ -29,42 +29,42 @@ vehshop.menu = {
 		title = "Cars",
 		name = "Cars",
 		buttons = {
-			{name = "Sedan"},
-			{name = "Coupe"},
+			{name = "Super"},
+			{name = "Sport"},
 			{name = "Muscle"},
 		}
 	},
-	["Sedan"] = {
-		title = "Sedan",
-		name = "Sedan",
+	["Super"] = {
+		title = "Super",
+		name = "Super",
 		buttons = {
-			{name = "Schafter", costs = 500000, model = "schafter2"},
-			{name = "Fugitive", costs = 180000, model = "fugitive"},
-			{name = "Intruder", costs = 700000, model = "intruder"},
-			{name = "Primo", costs = 500000, model = "primo"},
-			{name = "Tailgater", costs = 800000, model = "tailgater"},
+			{name = "Vagner", costs = 1000000, model = "vagner"},
+			{name = "XA-21", costs = 900000, model = "xa21"},
+			{name = "Tempesta", costs = 800000, model = "tempesta"},
+			{name = "Zentorno", costs = 700000, model = "zentorno"},
+			{name = "Nero Custom", costs = 600000, model = "nero2"},
 		}
 	},
-	["Coupe"] = {
-		title = "Coupe",
-		name = "Coupe",
+	["Sport"] = {
+		title = "Sport",
+		name = "Sport",
 		buttons = {
-			{name = "Zion", costs = 10000000, model = "zion"},
-			{name = "Exemplar", costs = 7000000, model = "exemplar"},
-			{name = "Felon", costs = 500000, model = "felon"},
-			{name = "Jackal", costs = 7500000, model = "jackal"},
-			{name = "Cognescenti Cabrio", costs = 90000, model = "cogcabrio"},
+			{name = "Elegy", costs = 500000, model = "elegy2"},
+			{name = "Feltzer", costs = 400000, model = "feltzer2"},
+			{name = "Jester (Racecar)", costs = 300000, model = "jester2"},
+			{name = "Elegy Retro Custom", costs = 200000, model = "elegy"},
+			{name = "Jester", costs = 100000, model = "jester"},
 		}
 	},
 	["Muscle"] = {
 		title = "Muscle",
 		name = "Muscle",
 		buttons = {
-			{name = "Clique", costs = 9000000, model = "clique"},
-			{name = "Dominator", costs = 350000, model = "dominator"},
-			{name = "Vapid Blade", costs = 10000000, model = "blade"},
-			{name = "Declasse Sabre Turbo", costs = 4100000, model = "sabregt"},
-			{name = "Impaler", costs = 500000, model = "impaler"},
+			{name = "Pisswasser Dominator", costs = 90000, model = "dominator2"},
+			{name = "Sabre Turbo Custom", costs = 80000, model = "sabregt2"},
+			{name = "Dominator", costs = 70000, model = "dominator"},
+			{name = "Blade", costs = 60000, model = "blade"},
+			{name = "Dukes", costs = 50000, model = "dukes"},
 		}
 	},
 }

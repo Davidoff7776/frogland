@@ -448,14 +448,14 @@ Citizen.CreateThread(function()
 					end
 					vehSR_drawMenuButton(button,vehshop.menu.x,y,selected)
 					if button.costs ~= nil then
-						if vehshop.currentmenu == "Sedan" or vehshop.currentmenu == "Coupe" or vehshop.currentmenu == "Muscle" then
+						if vehshop.currentmenu == "Super" or vehshop.currentmenu == "Sport" or vehshop.currentmenu == "Muscle" then
 							vehSR_drawMenuRight("$"..button.costs,vehshop.menu.x,y,selected)
 						else
 							vehSR_drawMenuButton(button,vehshop.menu.x,y,selected)
 						end
 					end
 					y = y + 0.04
-					if vehshop.currentmenu == "Sedan" or vehshop.currentmenu == "Coupe" or vehshop.currentmenu == "Muscle" then
+					if vehshop.currentmenu == "Super" or vehshop.currentmenu == "Sport" or vehshop.currentmenu == "Muscle" then
 						if selected then
 							hash = GetHashKey(button.model)
 							if IsControlJustPressed(1,23) then
@@ -613,14 +613,14 @@ function vehSR_ButtonSelected(button)
 			vehSR_OpenMenu('Cars')
 		end
 	elseif this == "Cars" then
-		if btn == "Sedan" then
-			vehSR_OpenMenu('Sedan')
-		elseif btn == "Coupe" then
-			vehSR_OpenMenu('Coupe')
+		if btn == "Super" then
+			vehSR_OpenMenu('Super')
+		elseif btn == "Sport" then
+			vehSR_OpenMenu('Sport')
 		elseif btn == "Muscle" then
 			vehSR_OpenMenu('Muscle')
 		end
-	elseif this == "Sedan" or this == "Coupe" or this == "Muscle" then
+	elseif this == "Super" or this == "Sport" or this == "Muscle" then
 		TriggerServerEvent('veh_SR:CheckMoneyForVeh',this,button.model,button.costs,false,false)
 --[[ 	elseif  this == "motociclete" then
 		TriggerServerEvent('veh_SR:CheckMoneyForVeh',this,button.model,button.costs,false,false) ]]
@@ -657,7 +657,7 @@ function vehSR_Back()
 	backlock = true
 	if vehshop.currentmenu == "main" then
 		vehSR_CloseCreator("","")
-	elseif vehshop.currentmenu == "Sedan" or vehshop.currentmenu == "Coupe" or vehshop.currentmenu == "Muscle" then
+	elseif vehshop.currentmenu == "Super" or vehshop.currentmenu == "Sport" or vehshop.currentmenu == "Muscle" then
 		if DoesEntityExist(fakecar.car) then
 			Citizen.InvokeNative(0xEA386986E786A54F, Citizen.PointerValueIntInitialized(fakecar.car))
 		end
