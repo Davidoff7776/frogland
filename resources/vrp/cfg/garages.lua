@@ -97,11 +97,11 @@ cfg.garage_types = {
     ["jet"] = {"Boeing 747",0, "jet"}
   },
   ["Pilot San Andreas"] = {
-    _config = {vtype="Plane",blipid=16,blipcolor=30,permissions={"player.phone"}},
+    _config = {vtype="Plane",blipid=16,blipcolor=30,permissions={"pilot.vehicle"}},
      ["mammatus"] = {"Small Cargo",0, "mammatus"}
   },
   ["Air P"] = {
-    _config = {vtype="Heli",blipid=16,blipcolor=30,permissions={"player.phone"}},
+    _config = {vtype="Heli",blipid=16,blipcolor=30,permissions={"air.vehicle"}},
     ["vestra"] = {"Plane",0, "vestra"}
   },
   ["Air H"] = {
@@ -220,7 +220,7 @@ cfg.garages = {
   {"Plane",2128.9069824219,4806.134765625,41.168750762939},
   {"Plane",1734.9053955078,3297.9689941406,41.223503112793},
   {"Heli",2128.9069824219,4806.134765625,41.168750762939},
-  {"Heli",-745.14343261719,-1468.5361328125,5.0005240440369},
+  {"Heli",-745.14343261719,-1468.5361328125,5.0005240440369, "air.vehicle"},
   {"Heli",1734.9053955078,3297.9689941406,41.223503112793},
   {"Car",768.86297607422,-1410.4896240234,26.502605438232, "trash.vehicle"}
 }
