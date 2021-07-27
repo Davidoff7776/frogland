@@ -312,7 +312,7 @@ function task_mission()
                   vRPclient.notify(player,{glang.money.received({reward})})
                   todo = todo-1
                   drugseller_items[idname] = 0
-                  if todo == 0 then -- all received, finish mission
+                  if todo < 3 then -- all received, finish mission
                     vRP.nextMissionStep({player})
                   end
                 end
