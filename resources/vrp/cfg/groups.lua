@@ -1121,7 +1121,6 @@ cfg.selectors = {
   ["City Hall"] = {
     _config = {x = -268.363739013672, y = -957.255126953125, z = 31.22313880920410, blipid = 498, blipcolor = 4},
     "UBER",
-    "Mechanic",
 	"Delivery",
 	"UPS",
 	"Fisher",
@@ -1131,6 +1130,11 @@ cfg.selectors = {
   ["Bank Driver"] = {
     _config = {x = 243.67727661133, y = 230.6535949707,z = 106.28681945801, blipid = 198, blipcolor = 4},
 	"Bankdriver",
+    "Unemployed"
+  },
+  ["Mechanic"] = {
+    _config = {x = 410.44815063476, y = -1621.6298828125, z = 29.291954040528, blipid = 446, blipcolor = 4},
+	"Mechanic",
     "Unemployed"
   },
   ["Police job"] = { -- Alta Street
