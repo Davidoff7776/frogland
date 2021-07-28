@@ -1130,7 +1130,7 @@ cfg.selectors = {
   },
   ["Bankdriver"] = {
     _config = {x = 243.67727661133, y = 230.6535949707,z = 106.28681945801, blipid = 198, blipcolor = 4},
-	"Bank Driver"
+	"Bank Driver",
     "Unemployed"
   },
   ["Police job"] = { -- Alta Street
