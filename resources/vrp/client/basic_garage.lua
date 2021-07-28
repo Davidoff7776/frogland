@@ -44,7 +44,7 @@ function tvRP.spawnGarageVehicle(vtype, name, pos) -- vtype is the vehicle type 
             SetNetworkIdCanMigrate(nid, cfg.vehicle_migration)
 
             vehicles[vtype] = {vtype, name, nveh} -- set current vehicule
-            print(name, nveh)
+            -- print(name, nveh)
             TriggerServerEvent("LSC:applyModifications", name, nveh)
             SetModelAsNoLongerNeeded(mhash)
         end

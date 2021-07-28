@@ -34,7 +34,7 @@ Citizen.CreateThread(function()
                end
             end
         end)
-        print('Vehicle Rents checked.')
+        -- print('Vehicle Rents checked.')
     end
 end)
 

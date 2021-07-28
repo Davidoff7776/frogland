@@ -86,7 +86,7 @@ if vRPConfig.LootBags then
                     end
                 end
             end
-            print('All Lootbag garbage collected.')
+            --print('All Lootbag garbage collected.')
         end
     end)
 
