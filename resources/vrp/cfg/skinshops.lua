@@ -3,8 +3,8 @@ local cfg = {}
 
 -- define customization parts
 local parts = {
-  ["Face"] = 0,
-  ["Hair"] = 2,
+  --["Face"] = 0,
+  --["Hair"] = 2,
   ["Hand"] = 3,
   ["Legs"] = 4,
   ["Shirt"] = 8,

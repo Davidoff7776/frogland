@@ -2,10 +2,10 @@
 local cfg = {}
 
 -- city hall position
-cfg.city_hall =	{-262.25286865234,-969.47399902344,31.223146438599}
+cfg.city_hall =	{440.79138183594,-981.12158203125,30.689613342286}
 
 -- cityhall blip {blipid,blipcolor}
-cfg.blip = {498,4}
+cfg.blip = {498,4,"ID Card"}
 
 -- cost of a new identity
 cfg.new_identity_cost = 100
