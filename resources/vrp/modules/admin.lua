@@ -690,10 +690,8 @@ AddEventHandler('vRPAdmin:AddGroup', function(id, group)
     end 
 end)
 
-RegisterNetEvent('vRPAdmin:Revive')
-AddEventHandler('vRPAdmin:Revive', function(id)
-    local source = source 
-    local SelectedPlrSource = vRP.getUserSource(id) 
+local function revive(source, id)
+    local SelectedPlrSource = vRP.getUserSource(id)
     local userid = vRP.getUserId(source)
     if vRP.hasPermission(userid, 'player.revive') then
         if SelectedPlrSource then  
@@ -704,7 +702,18 @@ AddEventHandler('vRPAdmin:Revive', function(id)
         end
     else 
         print(GetPlayerName(source) .. ' is cheating! He\'s triggering events without permission')
-    end 
+    end
+end
+
+RegisterCommand('arevive', function(source, id)
+    id = tonumber(id[1])
+    revive(source, id)
+end)
+
+RegisterNetEvent('vRPAdmin:Revive')
+AddEventHandler('vRPAdmin:Revive', function(id)
+    local source = source
+    revive(source, id)
 end)
 
 RegisterNetEvent('vRPAdmin:SlapPlayer')
@@ -885,6 +894,15 @@ RegisterCommand('calladmin', function(source)
     if user_id ~= nil then
         if vRP.hasPermission(user_id,"player.calladmin") then
             ch_calladmin(source, nil)
+        end
+    end 
+end)
+
+RegisterCommand('tptow', function(source)
+    local user_id = vRP.getUserId(source)
+    if user_id ~= nil then
+        if vRP.hasPermission(user_id,"player.tptowaypoint") then
+            TriggerClientEvent("TpToWaypoint", source)
         end
     end 
 end)
