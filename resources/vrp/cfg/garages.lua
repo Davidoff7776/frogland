@@ -45,14 +45,14 @@ cfg.garage_types = {
     ["police3"] = {"Cruiser (Interceptor)",0, "police"},
     ["police4"] = {"Unmarked Cruiser",0, "police"},
     ["policet"] = {"Transporter",0, "police"},
-    ["policeb"] = {"Bike",0, "police"}
+    ["policeb"] = {"Bike",0, "police"},
     ["riot"] = {"Riot",0, "police"},
     ["sheriff"] = {"Sheriff Cruiser",0, "police"},
-    ["sheriff2"] = {"Sheriff SUV",0, "police"},
+    ["sheriff2"] = {"Sheriff SUV",0, "police"}
   },
   ["Police Cadet"] = {
     _config = {vtype="Car",blipid=56,blipcolor=38,permissions={"Cadet.vehicle"}},
-    ["police"] = {"Cruiser",0, "police"},
+    ["police"] = {"Cruiser",0, "police"}
   },
   ["FBI"] = {
     _config = {vtype="Car",blipid=56,blipcolor=38,permissions={"Bounty.vehicle"}},
