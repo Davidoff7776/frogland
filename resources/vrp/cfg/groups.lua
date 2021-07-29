@@ -1122,9 +1122,21 @@ cfg.selectors = {
     _config = {x = -268.363739013672, y = -957.255126953125, z = 31.22313880920410, blipid = 498, blipcolor = 4},
     "UBER",
 	"Delivery",
-	"UPS",
-	"Fisher",
+    "Unemployed"
+  },
+  ["Medical Transport"] = {
+    _config = {x=2220.8239746094, y=5614.4350585938, z=54.718532562256, blipid = 140, blipcolor = 2},
 	"Medical Transport",
+    "Unemployed"
+  },
+  ["Fisher"] = {
+    _config = {x=1522.7407226562, y=3917.1511230469, z=31.671689987183, blipid = 88, blipcolor = 4},
+	"Fisher",
+    "Unemployed"
+  },
+  ["UPS"] = {
+    _config = {x=82.200584411621, y=81.222137451172, z=78.616920471191, blipid = 318, blipcolor = 4},
+	"UPS",
     "Unemployed"
   },
   ["Bank Driver"] = {
