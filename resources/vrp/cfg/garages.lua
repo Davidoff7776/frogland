@@ -40,35 +40,19 @@ cfg.garage_types = {
   },
   ["Police Vehicles"] = {
     _config = {vtype="Car",blipid=56,blipcolor=38,permissions={"police.vehicle"}},
-    ["police"] = {"Police Cruiser",0, "police"},
-    ["police2"] = {"Dodge Sheriff",0, "police"},
-    ["police3"] = {"Police3",0, "police"},
-    ["police4"] = {"police4",0, "police"},
-    ["police5"] = {"Police SUV",0, "police"},
-    ["police6"] = {"Police K9",0, "police"},
-    ["police7"] = {"Police7",0, "police"},
-	  ["police8"] = {"Police8",0, "police"},
-    ["policet"] = {"policet",0, "police"},
-    ["sheriff3"] = {"Sheriff",0, "police"},
+    ["police"] = {"Cruiser",0, "police"},
+    ["police2"] = {"Cruiser (Buffalo)",0, "police"},
+    ["police3"] = {"Cruiser (Interceptor)",0, "police"},
+    ["police4"] = {"Unmarked Cruiser",0, "police"},
+    ["policet"] = {"Transporter",0, "police"},
+    ["policeb"] = {"Bike",0, "police"}
+    ["riot"] = {"Riot",0, "police"},
+    ["sheriff"] = {"Sheriff Cruiser",0, "police"},
     ["sheriff2"] = {"Sheriff SUV",0, "police"},
-    ["sheriff"] = {"2015 Sheriff",0, "police"},
-    ["riot"] = {"SWAT",0, "police"},
-    ["fbi"] = {"Unmarked",0, "police"},
-    ["hwaycar2"] = {"State Trooper",0, "police"},
-    ["hwaycar3"] = {"Trooper SUV",0, "police"},
-    ["hwaycar5"] = {"hwaycar5",0, "police"},
-    ["hwaycar6"] = {"hwaycar6",0, "police"},
-    ["hwaycar7"] = {"hwaycar7",0, "police"},
-    ["hwaycar8"] = {"hwaycar8",0, "police"},
-    ["hwaycar9"] = {"hwaycar9",0, "police"},
-    ["hwaycar10"] = {"hwaycar10",0, "police"},
-    ["hwaycar"] = {"hwaycar",0, "police"},
-    ["polf430"] = {"Police Ferarri",0, "police"},
-    ["policeb"] = {"policeb",0, "police"}
   },
   ["Police Cadet"] = {
     _config = {vtype="Car",blipid=56,blipcolor=38,permissions={"Cadet.vehicle"}},
-    ["police7"] = {"police",0, "police"}
+    ["police"] = {"Cruiser",0, "police"},
   },
   ["FBI"] = {
     _config = {vtype="Car",blipid=56,blipcolor=38,permissions={"Bounty.vehicle"}},
@@ -77,8 +61,7 @@ cfg.garage_types = {
   ["Ambulance Service"] = {
     _config = {vtype="Car",blipid=50,blipcolor=3,permissions={"emergency.vehicle"}},
     ["Ambulance"] = {"Ambulance",0, "emergency"},
-    ["hwaycar4"] = {"Tahoe",0, "emergency"},
-    ["firetruk"] = {"firetruk",0, "emergency"}
+    ["firetruk"] = {"Fire Truk",0, "emergency"}
   },
   ["Police Helicopters"] = {
     _config = {vtype="Heli",blipid=43,blipcolor=38,radius=5.1,permissions={"police.vehicle"}},
