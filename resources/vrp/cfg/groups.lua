@@ -1149,64 +1149,6 @@ cfg.selectors = {
 	"Mechanic",
     "Unemployed"
   },
-  ["Police job"] = { -- Alta Street
-    _config = {x = 443.52569580078, y = -975.63049316406, z = 30.689334869385, blipid = 351, blipcolor = 38, permissions = {"cop.whitelisted"} },
-	"State Trooper",
-	"Police Captain",
-	"Police Lieutenant",
-	"Police Detective",
-	"Police Sergeant",
-	"Sheriff",
-	"Deputy Sheriff",
-	"Police Officer",
-	"Dispatcher",
-	"Cadet",
-	"SWAT",
-	"Unemployed"
-    },
-  ["Police job 2"] = { -- Sandy Shores
-    _config = {x = 1857.5961914063, y = 3688.8952636719, z = 34.267040252686, blipid = 351, blipcolor = 38, permissions = {"cop.whitelisted"} },
-	"State Trooper",
-	"Police Captain",
-	"Police Lieutenant",
-	"Police Detective",
-	"Police Sergeant",
-	"Sheriff",
-	"Deputy Sheriff",
-	"Police Officer",
-	"Dispatcher",
-	"Cadet",
-	"SWAT",
-	"Unemployed"
-    },
-  ["Police job 3"] = { -- Paleto Bay
-    _config = {x = -449.00927734375, y = 6017.1953125, z = 31.716377258301, blipid = 351, blipcolor = 38, permissions = {"cop.whitelisted"} },
-	"State Trooper",
-	"Police Captain",
-	"Police Lieutenant",
-	"Police Detective",
-	"Police Sergeant",
-	"Sheriff",
-	"Deputy Sheriff",
-	"Police Officer",
-	"Dispatcher",
-	"Cadet",
-	"SWAT",
-	"Unemployed"
-    },
-  ["Emergency job"] = { -- Spawn Hospital
-    _config = {x =  249.50639343262, y = -1375.0694580078, z = 39.534378051758, blipid = 351, blipcolor = 3, permissions = {"ems.whitelisted"} },
-    "EMS Chief",
-    "EMS Lieutenant",
-    "EMS Search and Rescue",
-	"EMS Paramedic",
-	"Unemployed"
-  },
-  ["Mafia"] = {
-    _config = {x =  1391.9857177734, y = 3603.3562011719, z = 38.94193649292, blipid = 351, blipcolor = 3, permissions = {"mafia.whitelisted"} }, -- UPDATE THE COORDINATES
-	"Mafia",
-	"Unemployed"
-  },
   ["Lawyer"] = {
     _config = {x = -1911.9273681641, y = -569.71649169922, z = 19.097215652466, blipid = 351, blipcolor = 7, permissions = {"Lawyer.whitelisted"} },
     "Lawyer",
