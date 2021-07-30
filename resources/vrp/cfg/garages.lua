@@ -65,7 +65,7 @@ cfg.garage_types = {
   },
   ["Police Helicopters"] = {
     _config = {vtype="Heli",blipid=43,blipcolor=38,radius=5.1,permissions={"police.vehicle"}},
-    ["polmav"] = {"Maverick",0, "emergency"}
+    ["polmav"] = {"Maverick",0, "police"}
   },
   ["EMS Helicopter"] = {
     _config = {vtype="Heli",blipid=43,blipcolor=1,radius=5.1,permissions={"emergency.vehicle"}},
