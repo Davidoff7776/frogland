@@ -23,7 +23,7 @@ local lieutenant_male = { model = "s_m_m_Armoured_02"}
 local sergeant_male = { model = "s_m_y_Ranger_01"}
 local deputy_male = { model = "s_m_y_ranger_01"}
 local chief_male = {model = "s_m_m_ciasec_01"}
-local santa = {model = "Santaclaus"}
+--local santa = {model = "Santaclaus"}
 
 --s_m_m_paramedic_01
 --s_f_y_scrubs_01
