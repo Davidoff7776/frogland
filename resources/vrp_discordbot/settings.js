@@ -5,7 +5,7 @@ exports.settings = {
     ip: "20.199.109.198", // ip of the server or domain!
     StatusEnabled: true, // Whether the status is enabled be sure to fill out the bottom too!
     GuildID: "871093048250105897", // Guild ID 
-    StatusChannel: "server-logging" // The status channel, 
+    StatusChannel: "info" // The status channel, 
 }
 
 /* 
