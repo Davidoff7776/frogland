@@ -132,12 +132,12 @@ const init = async() => {
 client.getPerms = function(msg) {
 
     let settings = settingsjson.settings
-    // let lvl1 = msg.guild.roles.find(r => r.name === settings.Level1Perm);
-    // let lvl2 = msg.guild.roles.find(r => r.name === settings.Level2Perm);
-    // let lvl3 = msg.guild.roles.find(r => r.name === settings.Level3Perm);
-    // if (!lvl1 || !lvl2 || !lvl3) {
-    //     console.log(`[^1JamesUK Discord Bot^7]: Your permissions are not setup correctly and the bot will not function as intended.\nStatus: Level 1 Perm is: ${lvl1}, Level 2 Perm is: ${lvl2}, Level 3 Perm is ${lvl3}`)
-    // }
+    let lvl1 = msg.guild.roles.find(r => r.name === settings.Level1Perm);
+    let lvl2 = msg.guild.roles.find(r => r.name === settings.Level2Perm);
+    let lvl3 = msg.guild.roles.find(r => r.name === settings.Level3Perm);
+    if (!lvl1 || !lvl2 || !lvl3) {
+        console.log(`[^1JamesUK Discord Bot^7]: Your permissions are not setup correctly and the bot will not function as intended.\nStatus: Level 1 Perm is: ${lvl1}, Level 2 Perm is: ${lvl2}, Level 3 Perm is ${lvl3}`)
+    }
 
     // hot fix for Discord role caching 
     const guild = client.guilds.get(msg.guild.id);
@@ -147,16 +147,15 @@ client.getPerms = function(msg) {
     const member = guild.members.get(msg.author.id);
     // hot fix for Discord role caching 
 
-    // let level = 0;
-    // if (msg.member.roles.has(lvl1.id)) {
-    //     level = 1;
-    // } else if (msg.member.roles.has(lvl2.id)) {
-    //     level = 2;
-    // } else if (msg.member.roles.has(lvl3.id)) {
-    //     level = 3;
-    // }
-    // return level
-    return 3
+    let level = 0;
+    if (msg.member.roles.has(lvl1.id)) {
+        level = 1;
+    } else if (msg.member.roles.has(lvl2.id)) {
+        level = 2;
+    } else if (msg.member.roles.has(lvl3.id)) {
+        level = 3;
+    }
+    return level
 }
 
 client.on('message', (message) => {

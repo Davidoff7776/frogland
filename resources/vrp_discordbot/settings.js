@@ -1,7 +1,7 @@
 exports.settings = {
-    Level1Perm: "",
-    Level2Perm: "▬▬▬▬▬STAFF▬▬▬▬▬", // Change these to the role names of the relevant permission!
-    Level3Perm: "Bots",
+    Level1Perm: "Support team",
+    Level2Perm: "Admin", // Change these to the role names of the relevant permission!
+    Level3Perm: "Discord Owner",
     ip: "20.199.109.198", // ip of the server or domain!
     StatusEnabled: true, // Whether the status is enabled be sure to fill out the bottom too!
     GuildID: "871093048250105897", // Guild ID 
