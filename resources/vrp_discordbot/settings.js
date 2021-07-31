@@ -1,11 +1,11 @@
 exports.settings = {
-    Level1Perm: "L1",
-    Level2Perm: "L2", // Change these to the role names of the relevant permission!
-    Level3Perm: "L3",
-    ip: "192.168.0.1", // ip of the server or domain!
+    Level1Perm: "",
+    Level2Perm: "▬▬▬▬▬STAFF▬▬▬▬▬", // Change these to the role names of the relevant permission!
+    Level3Perm: "Bots",
+    ip: "20.199.109.198", // ip of the server or domain!
     StatusEnabled: true, // Whether the status is enabled be sure to fill out the bottom too!
-    GuildID: "822837472546258985", // Guild ID 
-    StatusChannel: "status" // The status channel, 
+    GuildID: "871093048250105897", // Guild ID 
+    StatusChannel: "server-logging" // The status channel, 
 }
 
 /* 
