@@ -22,5 +22,5 @@ exports.runcmd = (fivemexports, client, message, params) => {
 
 exports.conf = {
     name: "groups",
-    perm: 2
+    perm: 1
 }
