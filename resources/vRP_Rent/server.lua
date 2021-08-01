@@ -13,9 +13,9 @@ function vRPSrent.verificaMoney(money)
     local id = vRP.getUserId({source})
     if money > 0 then
         if vRP.tryFullPayment({id, tonumber(money)})then
-            vRPclient.notify(source, {"~b~[RENT] ~w~Ai inchiriat ~y~Ford Crown Victoria ~w~."})
+            vRPclient.notify(source, {"~b~[RENT] ~w~Ai inchiriat ~y~Faggio ~w~."})
         else
-            vRPclient.notify(source, {"~b~[RENT] ~r~Nu ai suficienti bani pentru a inchiria masina."})
+            vRPclient.notify(source, {"~b~[RENT] ~r~Nu ai suficienti bani pentru a inchiria scuterul."})
         end
     else
         vRPclient.notify(source,{"Nu e frumos sa-ti dai bani :("})    

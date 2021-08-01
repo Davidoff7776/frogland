@@ -61,9 +61,9 @@ function vRPCrent.spawnVeh(car)
     	rented = false
     	if( DoesEntityExist(vehicle) )then
     		deleteCar(vehicle)
-    		vRP.notify({"~g~[RENT] ~r~Masina inchiriata a fost returnata."})
+    		vRP.notify({"~g~[RENT] ~r~Scuterul inchiriat a fost returnat."})
     	else
-    		vRP.notify({"~g~[RENT] ~r~Masina inchiriata a fost returnata."})
+    		vRP.notify({"~g~[RENT] ~r~Scuterul inchiriat a fost returnat."})
     	end
     end)
 end
@@ -72,7 +72,7 @@ Citizen.CreateThread(function()
 	while true do
     Citizen.Wait(0)
     if (Vdist(GetEntityCoords(GetPlayerPed(-1)),rentPos[1],rentPos[2],rentPos[3]) <= 5.5) and not isCursor then
-      drawSubtitleText("Press ~y~[E]~s~ to rent a ~y~Car~s~ for 15 minutes", 1)
+      drawSubtitleText("Press ~y~[E]~s~ to rent a ~y~Scooter~s~ for 15 minutes", 1)
       if IsControlJustPressed(1,46) then
         isCursor = true
         FreezeEntityPosition(GetPlayerPed(-1), true)
@@ -80,7 +80,7 @@ Citizen.CreateThread(function()
     end
     if not isCursor then
       if(Vdist(GetEntityCoords(GetPlayerPed(-1)),rentPos[1],rentPos[2],rentPos[3]) <= 5.5) then
-	  	  DrawText3D(rentPos[1],rentPos[2],rentPos[3]+0.9, "~b~[RENT]~w~ \n Rent a car", 1.0, 7)
+	  	  DrawText3D(rentPos[1],rentPos[2],rentPos[3]+0.9, "~b~[RENT]~w~ \n Rent a scooter", 1.0, 7)
         DrawText3D(rentPos[1],rentPos[2],rentPos[3]+0.7, "~y~Faggio", 0.5, 4)
       end
 	  end
@@ -140,7 +140,7 @@ Citizen.CreateThread(function()
            DrawSprite("carIcon","carIcon",0.50,0.50,0.15,0.25,0.0,255,255,255,255)
            drawScreenText(0.50, 0.663+0.0010, 0,0, 0.5, "CLOSE", 255, 255, 255, 230, 1, 7, 1)
            drawScreenText(0.50, 0.345, 0,0, 0.35, "~w~Price: ~s~" ..carPrice.. " $", 0, 255, 21, 230, 1, 4, 1)
-           drawScreenText(0.50, 0.30, 0,0, 0.8, "Rent a car", 0, 255, 238, 230, 1, 7, 1)
+           drawScreenText(0.50, 0.30, 0,0, 0.8, "Rent a scooter", 0, 255, 238, 230, 1, 7, 1)
            DrawRect(0.50,0.68 + 0.002,0.06,0.03,closeColor[1],closeColor[2],closeColor[3],150)
         
         
@@ -162,7 +162,7 @@ Citizen.CreateThread(function()
                   	  rented = true
                   	  FreezeEntityPosition(GetPlayerPed(-1), false)
               		else
-              	  	  vRP.notify({"~g~[RENT] ~r~Poti inchiria doar o masina."})
+              	  	  vRP.notify({"~g~[RENT] ~r~Poti inchiria doar un scuter."})
               	  	end
                 end
             else
