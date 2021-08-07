@@ -158,7 +158,11 @@ AddEventHandler("vRP:playerLeave",function(user_id,source)
   -- (wallet,bank)
   local tmp = vRP.getUserTmpTable(user_id)
   if tmp and tmp.wallet ~= nil and tmp.bank ~= nil then
-    MySQL.execute("vRP/set_money", {user_id = user_id, wallet = tmp.wallet, bank = tmp.bank})
+    if tmp.wallet <= 2147483647 then
+      MySQL.execute("vRP/set_money", {user_id = user_id, wallet = tmp.wallet, bank = tmp.bank})
+    else
+      MySQL.execute("vRP/set_money", {user_id = user_id, wallet = 2147483647, bank = tmp.bank})
+    end
   end
 end)
 
@@ -166,7 +170,10 @@ end)
 AddEventHandler("vRP:save", function()
   for k,v in pairs(vRP.user_tmp_tables) do
     if v.wallet ~= nil and v.bank ~= nil then
-      MySQL.execute("vRP/set_money", {user_id = k, wallet = v.wallet, bank = v.bank})
+      if v.wallet <= 2147483647 then
+        MySQL.execute("vRP/set_money", {user_id = k, wallet = v.wallet, bank = v.bank})
+      else
+        MySQL.execute("vRP/set_money", {user_id = k, wallet = 2147483647, bank = v.bank})
     end
   end
 end)
