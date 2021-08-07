@@ -174,6 +174,7 @@ AddEventHandler("vRP:save", function()
         MySQL.execute("vRP/set_money", {user_id = k, wallet = v.wallet, bank = v.bank})
       else
         MySQL.execute("vRP/set_money", {user_id = k, wallet = 2147483647, bank = v.bank})
+      end
     end
   end
 end)
