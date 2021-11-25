@@ -15,7 +15,7 @@ function tvRP.Coma()
     if vRPConfig.LootBags then
         Wait(3000) -- wait delay for death.
         local user_id = vRP.getUserId(source)
-        local model = GetHashKey('p_ld_heist_bag_s_1')
+        local model = GetHashKey('prop_cs_heist_bag_01')
         local name1 = GetPlayerName(source)
         local lootbag = CreateObjectNoOffset(model, GetEntityCoords(GetPlayerPed(source)) + 0.4, true, true, false)
         local lootbagnetid = NetworkGetNetworkIdFromEntity(lootbag)
@@ -79,7 +79,11 @@ if vRPConfig.LootBags then
         while true do 
             Wait(60000)
             for i,v in pairs(LootBagEntities) do 
-                if #v.Items == 0 then
+                local itemCount = 0;
+                for i,v in pairs(v.Items) do
+                    itemCount = itemCount + 1
+                end
+                if itemCount == 0 then
                     if DoesEntityExist(v[1]) then 
                         DeleteEntity(v[1])
                         LootBagEntities[i] = nil;
@@ -160,7 +164,8 @@ if vRPConfig.LootBags then
                             cb_out(idname, amount)
                         end
                         refreshing = true;
-                        RefreshMenu()
+                        RefreshMenu(netid, source)
+                        vRP.closeMenu(player)
                     else
                         vRPclient.notify(source, {lang.inventory.full()})
                     end
@@ -186,7 +191,7 @@ if vRPConfig.LootBags then
             vRP.openMenu(player, submenu)
         end
         local submenu2 = build_itemlist_menu('LootBag', LootBagEntities[netid].Items, cb_take)
-        RefreshMenu = function()
+        RefreshMenu = function(netid, player)
             vRP.closeMenu(source)
             local items = 0;
             for k, v in pairs(LootBagEntities[netid].Items) do
@@ -206,6 +211,8 @@ if vRPConfig.LootBags then
                     LootBagEntities[netid][3] = false;
                     LootBagEntities[netid][5] = nil;
                 else 
+                    submenu2 = build_itemlist_menu('LootBag', LootBagEntities[netid].Items, cb_take)
+                    vRP.openMenu(player, submenu2)
                     refreshing = false    
                 end 
             end

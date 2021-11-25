@@ -1,19 +1,37 @@
 local NearLootBag = false; 
 local LootBagID = nil;
 local LootBagIDNew = nil;
+local LootBagCoords = nil;
+local PlayerInComa = false;
 local model = GetHashKey('prop_cs_heist_bag_01')
+
+
+AddEventHandler('vRP:IsInComa', function(coma)
+    PlayerInComa = coma;
+    if coma then 
+        LootBagCoords = false;
+        NearLootBag = false; 
+        LootBagID = nil;
+    end
+end)
 
 Citizen.CreateThread(function()
     while true do 
         Wait(250)
-        local coords = GetEntityCoords(PlayerPedId())
-        if DoesObjectOfTypeExistAtCoords(coords, 1.5, model, true) then
-           NearLootBag = true;
-           LootBagID = GetClosestObjectOfType(coords, 1.5, model, false, false, false)
-           LootBagIDNew = ObjToNet(LootBagID)
-        else 
-            NearLootBag = false; 
-            LootBagID = nil;
+        if not PlayerInComa then
+            local coords = GetEntityCoords(PlayerPedId())
+            if DoesObjectOfTypeExistAtCoords(coords, 1.5, model, true) then
+                if not NearLootBag then
+                    NearLootBag = true;
+                    LootBagID = GetClosestObjectOfType(coords, 1.5, model, false, false, false)
+                    LootBagIDNew = ObjToNet(LootBagID)
+                    LootBagCoords = GetEntityCoords(LootBagID)
+                end
+            else 
+                LootBagCoords = false;
+                NearLootBag = false; 
+                LootBagID = nil;
+            end
         end
     end
 end)
@@ -22,7 +40,7 @@ Citizen.CreateThread(function()
     while true do 
         Wait(0)
         if NearLootBag then 
-            Draw3DText(GetEntityCoords(LootBagID), "~g~~w~[~r~E~w~] to loot")
+            Draw3DText(LootBagCoords, "~g~~w~[~r~E~w~] to loot")
             if IsControlJustPressed(0, 38) then
                 TriggerServerEvent('vRP:LootBag', LootBagIDNew)
             end
