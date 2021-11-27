@@ -10,4 +10,4 @@ cfg.streetNames = true
 cfg.playerTalking = true
 
 --shows a speedometer in mph
-cfg.speedometer = true
+cfg.speedometer = false
