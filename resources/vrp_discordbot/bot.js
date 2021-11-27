@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.Client({ intents: ["GUILDS"] })
+const client = new Discord.Client();
 const path = require('path')
 const resourcePath = global.GetResourcePath ?
     global.GetResourcePath(global.GetCurrentResourceName()) : global.__dirname
@@ -50,8 +50,8 @@ setInterval(() => {
 
 if (settingsjson.settings.StatusEnabled) {
     setInterval(() => {
-        if (!client.guilds.cache.get(settingsjson.settings.GuildId)) return console.log(`[^1JamesUK Discord Bot^7]: Status is enabled but not configured correctly and will not work as intended.`)
-        let channelid = client.guilds.cache.get(settingsjson.settings.GuildId).channels.cache.find(r => r.name === settingsjson.settings.StatusChannel);
+        if (!client.guilds.get(settingsjson.settings.GuildID)) return console.log(`[^1JamesUK Discord Bot^7]: Status is enabled but not configured correctly and will not work as intended.`)
+        let channelid = client.guilds.get(settingsjson.settings.GuildID).channels.find(r => r.name === settingsjson.settings.StatusChannel);
         if (!channelid) return console.log(`[^1JamesUK Discord Bot^7]: Status channel is not available / cannot be found.`)
         let settingsjsons = require(resourcePath + '/params.json')
         let totalSeconds = (client.uptime / 1000);
@@ -59,7 +59,7 @@ if (settingsjson.settings.StatusEnabled) {
         let hours = Math.floor(totalSeconds / 3600);
         totalSeconds %= 3600;
         let minutes = Math.floor(totalSeconds / 60);
-        channelid.messages.fetch(settingsjsons.messageid).then(msg => {
+        channelid.fetchMessage(settingsjsons.messageid).then(msg => {
             let status = {
                 "color": 4289797,
                 "fields": [{
@@ -106,13 +106,9 @@ if (settingsjson.settings.StatusEnabled) {
 
 /*
     WAIT BEFORE YOU REMOVE THE CREDITS THINK ABOUT ALL THE HARDWORK THAT HAS GONE INTO THIS! 
-
     DEVELOPERS EVERY DAY HAVE THEIR WORK STOLEN OR CLAIMED BY OTHERS.
-
     IT'S TIME FOR CHANGE. PEOPLE WILL JUST STOP RELEASING THINGS IF YOU STEAL THEIR WORK. 
-
     - JamesUK#6793
-
 */
 
 
@@ -140,11 +136,11 @@ client.getPerms = function(msg) {
     }
 
     // hot fix for Discord role caching 
-    const guild = client.guilds.cache.get(msg.guild.id);
+    const guild = client.guilds.get(msg.guild.id);
     if (guild.members.has(msg.author.id)) {
         guild.members.delete(msg.author.id);
     }
-    const member = guild.members.cache.get(msg.author.id);
+    const member = guild.members.get(msg.author.id);
     // hot fix for Discord role caching 
 
     let level = 0;
@@ -158,7 +154,7 @@ client.getPerms = function(msg) {
     return level
 }
 
-client.on('messageCreate', (message) => {
+client.on('message', (message) => {
     let client = message.client;
     if (message.author.bot) return;
     if (!message.content.startsWith(process.env.PREFIX)) return;
@@ -179,7 +175,7 @@ client.on('messageCreate', (message) => {
                 "description": "\nAn error occured. Contact JamesUK#6793 in vRP with the code:\n\n```" + err.message + "\n```",
                 "color": 13632027
             }
-            message.channel.send({ embeds: [embed] })
+            message.channel.send({ embed })
         }
     }
 });
