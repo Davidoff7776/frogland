@@ -59,7 +59,7 @@ if (settingsjson.settings.StatusEnabled) {
         let hours = Math.floor(totalSeconds / 3600);
         totalSeconds %= 3600;
         let minutes = Math.floor(totalSeconds / 60);
-        channelid.fetchMessage(settingsjsons.messageid).then(msg => {
+        channelid.message.fetch(settingsjsons.messageid).then(msg => {
             let status = {
                 "color": 4289797,
                 "fields": [{
