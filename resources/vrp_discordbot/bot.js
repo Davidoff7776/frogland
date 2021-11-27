@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.Client({ intents: ["GUILDS"] })
 const path = require('path')
 const resourcePath = global.GetResourcePath ?
     global.GetResourcePath(global.GetCurrentResourceName()) : global.__dirname
