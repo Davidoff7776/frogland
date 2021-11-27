@@ -318,20 +318,20 @@ cfg.forger = {
 }
 
 -- Police
-local common_police_positions = {
-  {145.04643249512,-1044.4276123047,29.367944717407}, -- Vespucci
-  {-2957.4338378906,479.3232421875,15.696963310242}, -- Highway
-  {-104.5299987793,6470.8251953125,31.626712799072} -- Blaine County
-}
+-- local common_police_positions = {
+--   {145.04643249512,-1044.4276123047,29.367944717407}, -- Vespucci
+--   {-2957.4338378906,479.3232421875,15.696963310242}, -- Highway
+--   {-104.5299987793,6470.8251953125,31.626712799072} -- Blaine County
+-- }
 
-cfg.police = {
-  ["police.mission"] = {
-    positions = common_police_positions,
-    items = {
-      ["police_report"] = {1,1,600}
-    }
-  }
-}
+-- cfg.police = {
+--   ["police.mission"] = {
+--     positions = common_police_positions,
+--     items = {
+--       ["police_report"] = {1,1,600}
+--     }
+--   }
+-- }
 
 -- EMS
 local common_ems_positions = {
