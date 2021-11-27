@@ -51,7 +51,7 @@ setInterval(() => {
 if (settingsjson.settings.StatusEnabled) {
     setInterval(() => {
         if (!client.guilds.cache.get(settingsjson.settings.GuildID)) return console.log(`[^1JamesUK Discord Bot^7]: Status is enabled but not configured correctly and will not work as intended.`)
-        let channelid = client.guilds.cache.get(settingsjson.settings.GuildID).channels.find(r => r.name === settingsjson.settings.StatusChannel);
+        let channelid = client.guilds.cache.get(settingsjson.settings.GuildID).channels.cache.find(r => r.name === settingsjson.settings.StatusChannel);
         if (!channelid) return console.log(`[^1JamesUK Discord Bot^7]: Status channel is not available / cannot be found.`)
         let settingsjsons = require(resourcePath + '/params.json')
         let totalSeconds = (client.uptime / 1000);
