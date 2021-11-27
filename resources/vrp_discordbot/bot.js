@@ -50,8 +50,8 @@ setInterval(() => {
 
 if (settingsjson.settings.StatusEnabled) {
     setInterval(() => {
-        if (!client.guilds.cache.get(settingsjson.settings.GuildID)) return console.log(`[^1JamesUK Discord Bot^7]: Status is enabled but not configured correctly and will not work as intended.`)
-        let channelid = client.guilds.cache.get(settingsjson.settings.GuildID).channels.cache.find(r => r.name === settingsjson.settings.StatusChannel);
+        if (!client.guilds.cache.get(settingsjson.settings.GuildId)) return console.log(`[^1JamesUK Discord Bot^7]: Status is enabled but not configured correctly and will not work as intended.`)
+        let channelid = client.guilds.cache.get(settingsjson.settings.GuildId).channels.cache.find(r => r.name === settingsjson.settings.StatusChannel);
         if (!channelid) return console.log(`[^1JamesUK Discord Bot^7]: Status channel is not available / cannot be found.`)
         let settingsjsons = require(resourcePath + '/params.json')
         let totalSeconds = (client.uptime / 1000);
@@ -144,7 +144,7 @@ client.getPerms = function(msg) {
     if (guild.members.has(msg.author.id)) {
         guild.members.delete(msg.author.id);
     }
-    const member = guild.members.get(msg.author.id);
+    const member = guild.members.cache.get(msg.author.id);
     // hot fix for Discord role caching 
 
     let level = 0;
@@ -158,7 +158,7 @@ client.getPerms = function(msg) {
     return level
 }
 
-client.on('message', (message) => {
+client.on('messageCreate', (message) => {
     let client = message.client;
     if (message.author.bot) return;
     if (!message.content.startsWith(process.env.PREFIX)) return;
@@ -179,7 +179,7 @@ client.on('message', (message) => {
                 "description": "\nAn error occured. Contact JamesUK#6793 in vRP with the code:\n\n```" + err.message + "\n```",
                 "color": 13632027
             }
-            message.channel.send({ embed })
+            message.channel.send({ embeds: [embed] })
         }
     }
 });
