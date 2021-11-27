@@ -32,6 +32,9 @@ function tvRP.spawnGarageVehicle(vtype, name, pos) -- vtype is the vehicle type 
             end
 
             local nveh = CreateVehicle(mhash, x, y, z + 0.5, 0.0, true, false)
+            if name == "polmav" then
+                SetVehicleLivery(nveh, 0)
+            end
             SetVehicleOnGroundProperly(nveh)
             SetEntityInvincible(nveh, false)
             SetPedIntoVehicle(GetPlayerPed(-1), nveh, -1) -- put player inside
