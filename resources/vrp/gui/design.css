@@ -2,7 +2,6 @@
 	margin: 0;
 	padding: 0;
 }
-
 html, body {
 	margin: 0;
 	width: 100%;
@@ -10,19 +9,10 @@ html, body {
 	overflow: hidden;
 	display: block;
 }
-
-:root {
-	--main-color: #161b33;
-	--secondary-color: #23B5D3;
-	--radius-amount: 8px;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
 @font-face {
 	font-family: 'GTA';
 	src: url(fonts/GTA.woff);
 }
-
 .ogrp_console {
 	display: block;
 	position: absolute;
@@ -33,85 +23,72 @@ html, body {
 	color: red;
 	font-weight: bold;
 }
-
 .ogrp_mainMenu {
 	display: block;
-	width: 200px;
-	height: 401px;
+	width: 20%;
+	height: 40%;
 	position: absolute;
 	z-index: 3000;
-	bottom: 50px;
-	right: 75px;
+	right: 5%;
+	top: 15%;
 	text-align: center;
-	border-style: solid;
-	border-width: 30px 9px 30px 9px;
-	border-image: url(https://i.imgur.com/WXfxk2r.png) 30 9 30 9;
-	border-radius: 32px;
+	border-radius: 10px;
 	box-shadow: -1px -1px 60px -1px rgba(0,0,0,1);
 	cursor: pointer;
-	background-image: url(https://i.imgur.com/XP2tXMN.jpg);
-	background-size: cover;
+	background-color: rgba(0, 0, 0, 0.675);
 }
-
 .ogrp_menuHeader {
-	background-color: rgb(44, 189, 247);
+	background-color: rgb(255, 255, 255);
 	font-family: 'Unica One', cursive;
+	background-image: linear-gradient(to right, #258022 , #16ce2f);
 	color: white;
 	text-transform: uppercase;
 	text-align: center;
-	font-size: 16px;
+	font-size: 20px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 	font-weight: bold;
-	padding: 6px;
-	border: 1px solid #000000;
+	padding: 20px;
+	border: 1% solid black;
 	box-shadow: inset -1px -1px 60px 0px rgba(0,0,0,1);
 }
-
 .ogrp_menuChoices {
 	display: block;
 	overflow: auto;
-	height: 366px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	height: 84.4%;
 }
-
 .ogrp_menuChoices::-webkit-scrollbar {
 	display: none;
 }
-
 .ogrp_menuChoice {
 	display: block;
-	padding: 10px;
-	font-size: 16px;
-	font-family: 'GTA';
-	line-height: 24px;
-	height: 24px;
-	background-color: rgba(0, 0, 0, .5);
+	padding: 11px;
+	font-size: 15px;
+	font-family: 'Unica One', cursive;
+	line-height: 15px;
+	height: 15px;
 	color: #fff;
 	text-align: left;
-	border-bottom: 1px solid #000;
-	border-top: 1px solid #000;
 }
-
 .ogrp_MenuChoiceSelected {
 	color: #000;
-	border-bottom: 1px solid #000;
-	border-top: 1px solid #000;
-	background-color: rgba(146, 213, 126, 1);
+	background-color: rgb(200, 200, 200);
 	box-shadow: inset -1px -1px 60px 0px rgba(0,0,0,.5);
 }
-
 .ogrp_menuDescription {
 	display: block;
 	position: absolute;
-	top: 0px;
-	left: -15px;
-	border-radius: 0px 0px 4px 4px;
+	top: 2.5%;
+	left: -10px;
+	border-radius: 10px;
 	box-shadow: -1px -1px 60px 0px rgba(0,0,0,1);
 	background-color: rgba(0,0,0,0.5);
 	padding: 9px;
-	transform: translate(-100%, 0);
+	-webkit-transform: translate(-100%, 0);
 	text-align: left;
-	margin-right: 10px;
 }
-
 .ogrp_menuDescriptionContent {
 	display: block;
 	max-width: 350px;
@@ -124,134 +101,147 @@ html, body {
 
 /* progress bar */
 .progressbar{
-	position: absolute;
+position: absolute;
+}
+
+.progressbar .inner{
 }
 
 .progressbar .label{
-	position: absolute;
-	color: white;
-	font-weight: bold;
-	text-align: center;
-	text-shadow: 2px 2px black;
+position: absolute;
+color: white;
+font-weight: bold;
+text-align: center;
+text-shadow: 2px 2px black;
 }
+
+to
 
 /* progress bar */
 .progressbar{
-	position: absolute;
-	padding-top:3px;
-	padding-bottom:3px;
+position: absolute;
+padding-top:3px;
+padding-bottom:3px;
 }
 
 @media only screen and (max-width: 1366px) {
-	.progressbar {
-		position: absolute;
-		padding-top:2px;
-		padding-bottom:2px;
-	}
+.progressbar{
+position: absolute;
+padding-top:2px;
+padding-bottom:2px;
+}
+}
+
+.progressbar .inner{
 }
 
 .progressbar .label{
-	position: absolute;
-	color: white;
-	font-weight: bold;
-	text-align: center;
-	text-shadow: 2px 2px black;
+position: absolute;
+color: white;
+font-weight: bold;
+text-align: center;
+text-shadow: 2px 2px black;
 }
 
 /* wprompt */
 .wprompt{
-	background-color: var(--main-color);
-	border-radius: var(--radius-amount);
-	border-left: 5px solid var(--secondary-color);
-	color: white;  
-	width: 300px;
-	height: 200px;
-	display: flex;
-	padding: 5px;
-	flex-direction: column;
-	cursor: pointer;
-	font-family: 'Varela', sans-serif;
+  background-color: rgba(0,0,0,0.4);
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 1px 1px 18px 1px #000000;
+  color: white;  
+  width: 300px;
+  height: 200px;
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .wprompt h1{
-	font-size: 12px;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .wprompt textarea{
-	outline: none !important;
-	background-color: var(--main-color);
-	border-radius: var(--radius-amount);
-	box-shadow: inset 1px 1px 18px 1px #000000;
-	flex: 1;
-	color: white;
-	width: 100%;
-	padding: 12px;
-	resize: none;
-	box-sizing: border-box;
+  outline: none !important;
+  background-color: rgba(0,0,0,0.35);
+  border: 1px solid rgba(155,0,0,0.30);
+  box-shadow: inset 1px 1px 18px 1px #000000;
+  flex: 1;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  resize: none;
+  box-sizing: border-box;
 }
 
 .wprompt textarea:focus{
-	outline: none !important;
+  outline: none !important;
 }
 
 .wprompt .help{
-	font-size: 12px;
-	padding: 3px;
-	text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  padding: 3px;
+  text-transform: uppercase;
 }
 
 /* request manager */
 .request_manager{
-	position: absolute;
-	bottom: 10px;
-	right: 5px;
-	text-align: right;
-	font-family: 'Varela', sans-serif;
+  position: absolute;
+  bottom: -1px;
+  right: 25px;
+  text-align: right;
 }
 
 .request_manager div{
-	margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .request_manager div > span{
-	background-color: var(--main-color);
-	border-left: 5px solid var(--secondary-color);
-	border-radius: var(--radius-amount);
-	font-size: 17px;
-	color: white;
-	margin-bottom: -1px;
-	font-weight: bold;
-	padding: 5px;
-	text-align: center;
+  background-color: #3A3A3A;
+  border: 1px solid cyan;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: inset 1px 1px 18px 1px #000000;
+  border-radius: 5px 5px 0px 0px;
+  font-size: 25px;
+  color: white;
+  margin-bottom: -1px;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
 }
 
 .request_manager .yes{
-	padding-left: 15px;
-	color: rgb(0,255,0);
-	font-size: 1em;
-	text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  padding-left: 15px;
+  color: rgb(0,255,0);
+  font-size: 1em;
+  text-transform: uppercase;
 }
 
 .request_manager .no{
-	color: rgb(255,0,0);
-	font-size: 1em;
-	text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(255,0,0);
+  font-size: 1em;
+  text-transform: uppercase;
 }
 
 /* announce */
 
 .announce{
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 780px;
-	height: 130px;
-	padding: 10px;
-	margin-left: -400px;
-	font-weight: bold;
-	font-size: 1.1em;
-	text-shadow: 2px 2px black;
-	color: white;
-	display: none;
-	opacity: 0.90;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 780px;
+  height: 130px;
+  padding: 10px;
+  margin-left: -400px;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-shadow: 2px 2px black;
+  color: white;
+  display: none;
+  opacity: 0.90;
 }
+
