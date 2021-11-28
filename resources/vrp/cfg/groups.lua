@@ -1122,7 +1122,6 @@ cfg.selectors = {
     _config = {x = -268.363739013672, y = -957.255126953125, z = 31.22313880920410, blipid = 498, blipcolor = 4},
     "UBER",
 	"Delivery",
-	"Drug Dealer",
     "Unemployed"
   },
   ["Medical Transport"] = {

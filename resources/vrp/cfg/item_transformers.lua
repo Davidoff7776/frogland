@@ -460,81 +460,81 @@ cfg.hidden_transformers = {
       {1992.5993652344,3044.1806640625,47.215068817139}
     }
   },
-  ["police1"] = {
-    def = {
-      name="Police Report", -- menu name
-      permissions = {"police.mission"}, -- you can add permissions
-      r=0,g=200,b=0, -- color
-      max_units=100000,
-      units_per_minute=100000,
-      x=0,y=0,z=0, -- pos
-      radius=5, height=1.5, -- area
-      recipes = {
-        ["Write Report"] = { -- action name
-          description="Writing Report...", -- action description
-          in_money=0, -- money taken per unit
-          out_money=0, -- money earned per unit
-          reagents={}, -- items taken per unit
-          products={ -- items given per unit
-            ["police_report"] = 1
-          }
-        }
-      }
-    },
-    positions = {
-      {439.57083129883,-995.072265625,30.689596176147} -- Mission Row
-    }
-  },
-  ["police2"] = {
-    def = {
-      name="Police Report", -- menu name
-      permissions = {"police.mission"}, -- you can add permissions
-      r=0,g=200,b=0, -- color
-      max_units=100000,
-      units_per_minute=100000,
-      x=0,y=0,z=0, -- pos
-      radius=5, height=1.5, -- area
-      recipes = {
-        ["Write Report"] = { -- action name
-          description="Writing Report...", -- action description
-          in_money=0, -- money taken per unit
-          out_money=0, -- money earned per unit
-          reagents={}, -- items taken per unit
-          products={ -- items given per unit
-            ["police_report"] = 1
-          }
-        }
-      }
-    },
-    positions = {
-      {1851.6605224609,3690.6713867188,34.267044067383} -- Sandy Shores
-    }
-  },
-  ["police3"] = {
-    def = {
-      name="Police Report", -- menu name
-      permissions = {"police.mission"}, -- you can add permissions
-      r=0,g=200,b=0, -- color
-      max_units=100000,
-      units_per_minute=100000,
-      x=0,y=0,z=0, -- pos
-      radius=5, height=1.5, -- area
-      recipes = {
-        ["Write Report"] = { -- action name
-          description="Writing Report...", -- action description
-          in_money=0, -- money taken per unit
-          out_money=0, -- money earned per unit
-          reagents={}, -- items taken per unit
-          products={ -- items given per unit
-            ["police_report"] = 1
-          }
-        }
-      }
-    },
-    positions = {
-      {-449.43395996094,6010.796875,31.716377258301} -- Paleto
-    }
-  },
+  -- ["police1"] = {
+  --   def = {
+  --     name="Police Report", -- menu name
+  --     permissions = {"police.mission"}, -- you can add permissions
+  --     r=0,g=200,b=0, -- color
+  --     max_units=100000,
+  --     units_per_minute=100000,
+  --     x=0,y=0,z=0, -- pos
+  --     radius=5, height=1.5, -- area
+  --     recipes = {
+  --       ["Write Report"] = { -- action name
+  --         description="Writing Report...", -- action description
+  --         in_money=0, -- money taken per unit
+  --         out_money=0, -- money earned per unit
+  --         reagents={}, -- items taken per unit
+  --         products={ -- items given per unit
+  --           ["police_report"] = 1
+  --         }
+  --       }
+  --     }
+  --   },
+  --   positions = {
+  --     {439.57083129883,-995.072265625,30.689596176147} -- Mission Row
+  --   }
+  -- },
+  -- ["police2"] = {
+  --   def = {
+  --     name="Police Report", -- menu name
+  --     permissions = {"police.mission"}, -- you can add permissions
+  --     r=0,g=200,b=0, -- color
+  --     max_units=100000,
+  --     units_per_minute=100000,
+  --     x=0,y=0,z=0, -- pos
+  --     radius=5, height=1.5, -- area
+  --     recipes = {
+  --       ["Write Report"] = { -- action name
+  --         description="Writing Report...", -- action description
+  --         in_money=0, -- money taken per unit
+  --         out_money=0, -- money earned per unit
+  --         reagents={}, -- items taken per unit
+  --         products={ -- items given per unit
+  --           ["police_report"] = 1
+  --         }
+  --       }
+  --     }
+  --   },
+  --   positions = {
+  --     {1851.6605224609,3690.6713867188,34.267044067383} -- Sandy Shores
+  --   }
+  -- },
+  -- ["police3"] = {
+  --   def = {
+  --     name="Police Report", -- menu name
+  --     permissions = {"police.mission"}, -- you can add permissions
+  --     r=0,g=200,b=0, -- color
+  --     max_units=100000,
+  --     units_per_minute=100000,
+  --     x=0,y=0,z=0, -- pos
+  --     radius=5, height=1.5, -- area
+  --     recipes = {
+  --       ["Write Report"] = { -- action name
+  --         description="Writing Report...", -- action description
+  --         in_money=0, -- money taken per unit
+  --         out_money=0, -- money earned per unit
+  --         reagents={}, -- items taken per unit
+  --         products={ -- items given per unit
+  --           ["police_report"] = 1
+  --         }
+  --       }
+  --     }
+  --   },
+  --   positions = {
+  --     {-449.43395996094,6010.796875,31.716377258301} -- Paleto
+  --   }
+  -- },
   ["ems"] = {
     def = {
       name="Medical Report", -- menu name
