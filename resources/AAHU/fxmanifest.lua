@@ -15,6 +15,7 @@
 --    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 fx_version 'cerulean'
+games {  'gta5' }
 
 server_script 'server.lua'
 client_script 'client.lua'
